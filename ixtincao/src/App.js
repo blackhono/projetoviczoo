@@ -1,32 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link, Redirect
+} from "react-router-dom";
 
-var timeA = 1
-var timeB = 2
-var nometimeA ="São Paulo"
-var nometimeB = "Cruzeiro"
+import Routes from './Constants/Routes';
+
+import Homepage from './pages/home';
+import Sobre from './pages/sobre';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          {`Time ${nometimeA} Fez ${timeA} gols contra o ${nometimeB} que fez ${timeB} gols `}
-        </p>
+    
+    <Router basename={process.env.PUBLIC_URL}>
+      <Switch>
+        <Route  path={Routes.HOME} component={Homepage}/>
         
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <Route path={Routes.SOBRE} component={Sobre}/>
+        {//Abaixo exemplo utilizando a documentação do React-Router-Dom 
+        }
+        {/* <Route path={Routes.SOBRE}>
+            <Sobre/>
+        </Route> */}
+
+        
+        
+      </Switch>
+    </Router>
   );
 }
 
