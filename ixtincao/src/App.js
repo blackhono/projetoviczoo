@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,19 +8,32 @@ import {
 
 import Routes from './Constants/Routes';
 
-import Homepage from './pages/home';
-import Sobre from './pages/sobre';
-
+import NavBar from './components/navBar/navBar';
+import Loading from './components/loading/loading';
 
 
 function App() {
+  
+  const homepage = lazy(() => import('./pages/home'));
+  const sobre = lazy(() => import('./pages/sobre'));
+  const eita = lazy(() => import('./components/loading/loading'));
+
   return (
-    
+    <>
     <Router basename={process.env.PUBLIC_URL}>
+    <NavBar/> 
+
       <Switch>
-        <Route  path={Routes.HOME} component={Homepage}/>
-        
-        <Route path={Routes.SOBRE} component={Sobre}/>
+        {/* Suspense espera o loading do conteudo */}
+        <Suspense fallback={<Loading/>}>
+          <Route exact path={Routes.HOME} component={homepage}/>
+          <Route exact path={Routes.SOBRE} component={sobre}/>
+          <Route exact path={Routes.EITA} component={eita} />
+          {/* <Redirect path={'/*'} to={Routes.SOBRE}></Redirect> */}
+        </Suspense>
+        {/* <Route  path={'/'} component={Homepage}/> */}
+        {/* <Route  path={Routes.HOME} component={Homepage}/>
+        <Route path={Routes.SOBRE} component={Sobre}/> */}
         {//Abaixo exemplo utilizando a documentação do React-Router-Dom 
         }
         {/* <Route path={Routes.SOBRE}>
@@ -31,6 +44,7 @@ function App() {
         
       </Switch>
     </Router>
+    </>
   );
 }
 

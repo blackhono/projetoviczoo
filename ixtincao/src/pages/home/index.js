@@ -7,7 +7,6 @@ export default function Homepage(){
 
     return(
       <>
-      <NavBar/>
       aaaaaaaaa
       <CorResto/>
       </>

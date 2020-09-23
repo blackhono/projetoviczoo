@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from "styled-components";
+import { Route , withRouter, useHistory} from 'react-router-dom';
 
-const quantidadeDeBotoes = ['Home','Sobre', 'Botaonovo'];
+
+
 
 const Barrinha = styled.div`
     width: 100%;
@@ -38,18 +40,88 @@ const Botao = styled(CorpoNavBar)`
     }
 `;
 
-const NavBar = ({
+const NavBar = () => {
 
-}) => {
+    let history = useHistory();
+
+    const quantidadeDeBotoes = [{
+        title:'home',
+        path: 'home',
+    },
+    {
+        title:'sobre',
+        path: 'sobre',
+    },
+    {
+        title:'Tela de Loading',
+        path: 'loading',
+    }
+    ];
+    
+    
     return(
         <>
         <Barrinha></Barrinha>
             <CorpoNavBar>
-                 {quantidadeDeBotoes.map(botao => <Botao>{botao}</Botao>)}
+                 {quantidadeDeBotoes.map((botao, index) => <Botao key={index} onClick={() => history.push(`/${botao.path}`)}>{botao.title}</Botao>)}
             </CorpoNavBar>
         </>
     )
 };
 
+/* 
+const NavBar = (...props) => {
+    let { informaçãoRecebidaDentroDoProps } = props; 
+    let history = useHistory();
+
+    const quantidadeDeBotoes = [{
+        title:'home',
+        path: 'home',
+    },
+    {
+        title:'sobre',
+        path: 'sobre',
+    }
+    ];
+    
+    
+    return(
+        <>
+        <Barrinha></Barrinha>
+            <CorpoNavBar>
+                 {quantidadeDeBotoes.map((botao, index) => <Botao key={index} onClick={() => history.push(`/${botao.path}`)}>{botao.title}</Botao>)}
+            </CorpoNavBar>
+        </>
+    )
+};
+ */
+
+/* const NavBar = ({
+    
+
+
+}) => {
+    
+    const quantidadeDeBotoes = [{
+        title:'home',
+        path: 'home',
+    },
+    {
+        title:'sobre',
+        path: 'sobre',
+    }
+    ];
+    const history = useHistory();
+    
+    return(
+        <>
+        <Barrinha></Barrinha>
+            <CorpoNavBar>
+                 {quantidadeDeBotoes.map(botao => <Botao onClick={history.push(`/${botao.path}`)}>{botao.title}</Botao>)}
+            </CorpoNavBar>
+        </>
+    )
+};
+ */
 
 export default NavBar;
