@@ -1,21 +1,20 @@
 import React from 'react';
+import styled from "styled-components";
 import NavVictor from '../../components/NavBarVictor/NavVictor';
-import emitir from '../../pages/pageluz/emitir';
 
-const cobrir = styled.div`
+
+const Cobrir = styled.div`
     background-color: rgba(12,0,200);
     width: 100%;
     height: 100px;
 `;
 
-const emitir = ({
-
-}) => {
+function Emitir(){
     return(
         <>
-        <cobrir></cobrir>
+        <Cobrir></Cobrir>
         </>
     )
 };
 
-export default emitir;
+export default Emitir;

@@ -17,6 +17,7 @@ function App() {
   const homepage = lazy(() => import('./pages/home'));
   const sobre = lazy(() => import('./pages/sobre'));
   const eita = lazy(() => import('./components/loading/loading'));
+  const pageluz = lazy(() => import('./pages/pageluz/emitir'));
 
   return (
     <>
@@ -29,6 +30,8 @@ function App() {
           <Route exact path={Routes.HOME} component={homepage}/>
           <Route exact path={Routes.SOBRE} component={sobre}/>
           <Route exact path={Routes.EITA} component={eita} />
+          {/* ROTA VICTOR ABAIXO*/}
+          <Route exact path={Routes.INICIO} component={pageluz} />
           {/* <Redirect path={'/*'} to={Routes.SOBRE}></Redirect> */}
         </Suspense>
         {/* <Route  path={'/'} component={Homepage}/> */}

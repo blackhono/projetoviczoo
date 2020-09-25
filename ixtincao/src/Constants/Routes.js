@@ -2,8 +2,8 @@ const Routes = {
     HOME: '/home',
     SOBRE: '/sobre',
     EITA: '/loading',
-    Inicio:'/ind',
-    informações:'/infos',
-    teste:'/loading'
+    INICIO:'/inicio',
+    INFORMACOES:'/infos',
+    TESTE:'/teste'
 }
 export default Routes;
