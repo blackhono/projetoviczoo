@@ -55,6 +55,10 @@ const NavBar = () => {
     {
         title:'Tela de Loading',
         path: 'loading',
+    },
+    {
+        title:'Pagina do Vitão',
+        path:'inicio'
     }
     ];
     
