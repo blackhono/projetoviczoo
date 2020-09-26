@@ -6,7 +6,12 @@ import { Route , withRouter, useHistory} from 'react-router-dom';
 const Barrao = styled.div`
     width: 100%;
     height: 20px;
-    background-color: rgb(0,0,0)
+    background-color: rgb(0,0,0);
+    text-transform:uppercase; 
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 14px;overflow: hidden;
+    transition: 0.5s
 
 `;
 
@@ -17,7 +22,7 @@ const cobrircorpo = styled.div`
     display:flex;
 
     `;
-    const Botao = styled(cobrircorpo)`
+    const Botao = styled(Cobrircorpo)`
     margin: -18px 0px 0px 0px;
     background-color: rgba(100,23,10)
     color: #37006f;
@@ -26,9 +31,9 @@ const cobrircorpo = styled.div`
     
     &:hover{color: yellowgreen;
         background: #f20000;box-shadow: 0 0 10px #f20000, 0 0 40px #f20000, 0 0 80px #f20000; 
-        transition-delay: 0.5s; 
+        transition-delay: 1s; 
         -webkit-box-reflect: below 1px linear-gradient(transparent,#0005); 
-        transition: 0.5s;
+        transition: 1.5s;
     }
     `;
 

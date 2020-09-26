@@ -13,6 +13,7 @@ function Emitir(){
     return(
         <>
         <Cobrir></Cobrir>
+        <NavVictor></NavVictor>
         </>
     )
 };
