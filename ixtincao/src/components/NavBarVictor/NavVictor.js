@@ -15,7 +15,7 @@ const Barrao = styled.div`
 
 `;
 
-const cobrircorpo = styled.div`
+const Cobrircorpo = styled.div`
     width: 100%;
     height: 42px;
     background-color: rgba( 16, 50, 12);

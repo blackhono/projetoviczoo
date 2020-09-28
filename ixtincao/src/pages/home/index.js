@@ -1,14 +1,12 @@
 import React from 'react';
+import  BarraDeBusca  from '../../components/componentsHome/barraDeBusca';
 
-import NavBar from '../../components/navBar/navBar';
-import CorResto from '../../components/corResto';
 
 export default function Homepage(){
 
     return(
       <>
-      aaaaaaaaa
-      <CorResto/>
+        <BarraDeBusca></BarraDeBusca>
       </>
     )
 
