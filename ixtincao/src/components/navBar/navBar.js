@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { Route, withRouter, useHistory } from 'react-router-dom';
+/* import Eita from '../../resources/imagesImport'; */
 
 
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -62,52 +63,61 @@ const NavBar = () => {
         title: 'Pagina Vitão',
         path: 'inicio'
     }
-    ,
+        ,
     {
         title: 'PAGINA EXTRA',
         path: 'pgex'
     }
     ];
 
+    let rows = []
+    for (let i = 1; i <= 10; i++) {
+        rows.push(
+
+            <div class="carousel-inner d-inline-block" id={`${i}`} style={{ height: '10%', width: '10%' }}>
+                <div class="carousel-item active" data-interval="1000" >
+                    <img src="https://images.samsung.com/is/image/samsung/br-uhdtv-nu8000-un75nu8000gxzd-frontblack-113032908?$L2-Thumbnail$" class="img-thumbnail" alt="..." />
+                </div>
+                <div class="carousel-item"  data-interval="1000">
+                    <img src="https://www.kabum.com.br/hotsite/playstation5/img/console-playstation5.png" class="img-thumbnail" alt="..." />
+                </div>
+                <div class="carousel-item" data-interval="1000">
+                    <img src="https://freepikpsd.com/wp-content/uploads/2019/10/aparelho-de-som-png-3-Transparent-Images.png" class="img-thumbnail" alt="..." />
+                </div>
+            </div>
+        )
+
+    }
+
 
     return (
         <>
 
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown
-        </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <div class="fixed-top">
+                <nav class="navbar navbar-dark bg-dark">
+                    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <form class="form-inline my-0 my-lg-0 w-75" style={{ flexFlow: "nowrap" }}>
+                        <input class="form-control mr-sm-4 w-100 " type="search" placeholder="Buscar" aria-label="Search" />
+                        <button class="btn btn-outline-danger bg my-2 my-sm-0" type="submit">Buscar</button>
                     </form>
+                </nav>
+                <div class="col-md-8" class="collapse " id="navbarToggleExternalContent">
+                    <div class="card-body" class="bg-dark p-4 d-block" >
+                        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                            {rows}
+                        </div>
+                    </div>
+
+
                 </div>
-            </nav>
+
+            </div>
+
+
+
 
             <CorpoNavBar>
                 {quantidadeDeBotoes.map((botao, index) => <Botao key={index} onClick={() => history.push(`/${botao.path}`)}>{botao.title}</Botao>)}

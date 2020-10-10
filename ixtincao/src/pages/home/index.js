@@ -1,12 +1,14 @@
 import React from 'react';
-import  BarraDeBusca  from '../../components/componentsHome/barraDeBusca';
+import  BarraDeDestaques  from '../../components/componentsHome/BarraDeDestaques';
+import  Produto  from '../../components/produto/produto';
 
 
 export default function Homepage(){
 
     return(
       <>
-        <BarraDeBusca></BarraDeBusca>
+        <BarraDeDestaques></BarraDeDestaques>
+        <Produto></Produto>
       </>
     )
 

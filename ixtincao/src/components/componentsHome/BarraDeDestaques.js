@@ -20,7 +20,7 @@ const Conteudo = styled(Barra)`
 
 
 
-const BarraDeBusca = () => {
+const BarraDeDestaques = () => {
 
     
     return(
@@ -30,4 +30,4 @@ const BarraDeBusca = () => {
     )
 };
 
-export default BarraDeBusca;
+export default BarraDeDestaques;

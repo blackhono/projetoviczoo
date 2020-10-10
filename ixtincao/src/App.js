@@ -33,6 +33,7 @@ function App() {
           {/* ROTA VICTOR ABAIXO*/}
           <Route exact path={Routes.INICIO} component={pageluz} />
           {/* <Redirect path={'/*'} to={Routes.SOBRE}></Redirect> */}
+          <Route path={'*'}><Loading/></Route>
         </Suspense>
         {/* <Route  path={'/'} component={Homepage}/> */}
         {/* <Route  path={Routes.HOME} component={Homepage}/>
