@@ -48,98 +48,42 @@ width:100%;
 height:100%;
 background-size: contain;
 `;
-
+const mock = [{
+    name: 'Playstation 5',
+    price: '4.500$'
+},
+{
+    name: 'Playstation 5',
+    price: '4.500$'
+},
+{
+    name: 'Playstation 5',
+    price: '4.500$'
+},
+{
+    name: 'Playstation 5',
+    price: '4.500$'
+}]
+const produtos = mock.map((item, index) => (
+    <Container>
+        <ContainerVisualizaProduto>
+            <ProdutoContainer>
+                <ProdutoVisualizacao></ProdutoVisualizacao>
+            </ProdutoContainer>
+        </ContainerVisualizaProduto>
+        <h2 style={{ textAlign: "center", marginTop: '30px' }}>{item.name}</h2>
+        <h1 style={{ textAlign: "center" }}> {item.price}</h1>
+    </Container>
+))
 
 const Produto = ({
-props
+    props
 }) => {
-    return(
+    return (
         <>
-        <Quadro>
-        <Container>
-        <ContainerVisualizaProduto>
-        <ProdutoContainer>
-            <ProdutoVisualizacao></ProdutoVisualizacao>
-        </ProdutoContainer>
-        </ContainerVisualizaProduto>
-        <h2 style={{ textAlign: "center", marginTop: '30px'  }}>Playstation 5</h2>
-        <h1 style={{ textAlign: "center" }}> 4.500$</h1>
-        </Container>
-
-
-        <Container>
-        <ContainerVisualizaProduto>
-        <ProdutoContainer>
-            <ProdutoVisualizacao></ProdutoVisualizacao>
-        </ProdutoContainer>
-        </ContainerVisualizaProduto>
-        <h2 style={{ textAlign: "center", marginTop: '30px'  }}>Playstation 5</h2>
-        <h1 style={{ textAlign: "center" }}> 4.500$</h1>
-        </Container>
-        <Container>
-        <ContainerVisualizaProduto>
-        <ProdutoContainer>
-            <ProdutoVisualizacao></ProdutoVisualizacao>
-        </ProdutoContainer>
-        </ContainerVisualizaProduto>
-        <h2 style={{ textAlign: "center", marginTop: '30px'  }}>Playstation 5</h2>
-        <h1 style={{ textAlign: "center" }}> 4.500$</h1>
-        </Container>
-        <Container>
-        <ContainerVisualizaProduto>
-        <ProdutoContainer>
-            <ProdutoVisualizacao></ProdutoVisualizacao>
-        </ProdutoContainer>
-        </ContainerVisualizaProduto>
-        <h2 style={{ textAlign: "center", marginTop: '30px'  }}>Playstation 5</h2>
-        <h1 style={{ textAlign: "center" }}> 4.500$</h1>
-        </Container>
-        <Container>
-        <ContainerVisualizaProduto>
-        <ProdutoContainer>
-            <ProdutoVisualizacao></ProdutoVisualizacao>
-        </ProdutoContainer>
-        </ContainerVisualizaProduto>
-        <h2 style={{ textAlign: "center", marginTop: '30px'  }}>Playstation 5</h2>
-        <h1 style={{ textAlign: "center" }}> 4.500$</h1>
-        </Container>
-        <Container>
-        <ContainerVisualizaProduto>
-        <ProdutoContainer>
-            <ProdutoVisualizacao></ProdutoVisualizacao>
-        </ProdutoContainer>
-        </ContainerVisualizaProduto>
-        <h2 style={{ textAlign: "center", marginTop: '30px'  }}>Playstation 5</h2>
-        <h1 style={{ textAlign: "center" }}> 4.500$</h1>
-        </Container>
-        <Container>
-        <ContainerVisualizaProduto>
-        <ProdutoContainer>
-            <ProdutoVisualizacao></ProdutoVisualizacao>
-        </ProdutoContainer>
-        </ContainerVisualizaProduto>
-        <h2 style={{ textAlign: "center", marginTop: '30px'  }}>Playstation 5</h2>
-        <h1 style={{ textAlign: "center" }}> 4.500$</h1>
-        </Container>
-        <Container>
-        <ContainerVisualizaProduto>
-        <ProdutoContainer>
-            <ProdutoVisualizacao></ProdutoVisualizacao>
-        </ProdutoContainer>
-        </ContainerVisualizaProduto>
-        <h2 style={{ textAlign: "center", marginTop: '30px'  }}>Playstation 5</h2>
-        <h1 style={{ textAlign: "center" }}> 4.500$</h1>
-        </Container>
-        <Container>
-        <ContainerVisualizaProduto>
-        <ProdutoContainer>
-            <ProdutoVisualizacao></ProdutoVisualizacao>
-        </ProdutoContainer>
-        </ContainerVisualizaProduto>
-        <h2 style={{ textAlign: "center", marginTop: '30px'  }}>Playstation 5</h2>
-        <h1 style={{ textAlign: "center" }}> 4.500$</h1>
-        </Container>
-        </Quadro>
+            <Quadro>
+                {produtos}
+            </Quadro>
         </>
     )
 };
