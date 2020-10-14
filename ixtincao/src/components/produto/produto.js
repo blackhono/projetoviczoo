@@ -76,9 +76,7 @@ const produtos = mock.map((item, index) => (
     </Container>
 ))
 
-const Produto = ({
-    props
-}) => {
+const Produto = (props) => {
     return (
         <>
             <Quadro>
